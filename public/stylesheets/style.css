@@ -146,6 +146,7 @@ display: inline;
     max-width:calc(100vw - 40px);
     box-sizing: border-box;
     font-family: "Monserrat", sans-serif;
+    -webkit-text-fill-color: rgb(65, 65, 65);
 }
 
 
