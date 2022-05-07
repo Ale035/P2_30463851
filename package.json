@@ -13,5 +13,9 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "sqlite3": "^5.0.6"
-  }
+  },
+  "main": "app.js",
+  "author": "Alejandro",
+  "license": "ISC",
+  "description": ""
 }
