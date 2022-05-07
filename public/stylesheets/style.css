@@ -200,7 +200,7 @@ button:hover{
 
 div.form{
 
-    position: relative;
+    position: bottom;
     bottom: 150px;
     right: -20px;
     color: white;
