@@ -6,7 +6,7 @@ body{
     background-position: center;
 }
 
-div{
+#div-curriculum{
     margin-left: 5%;  
     margin-right: 5%;  
     border: 2px solid black;
@@ -136,8 +136,8 @@ display: inline;
 
 
 .form{
-    width: 340px;
-    height: 440px;
+    width: 400px;
+    height: 490px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 40px -10px #000;

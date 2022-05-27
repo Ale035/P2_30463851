@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">  
+    <link rel="stylesheet" href="/stylesheets/style.css"> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBGS1800WX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DBGS1800WX');
+    </script>
+      <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body>
-    <div>
+    <div id='div-curriculum'>
         <h2>SINTESIS CURRICULAR</h2>
         <p>
         <img id="Perfil" src="/images/Foto.jpg" height="15%" width="15%">
@@ -55,19 +65,25 @@
 </div>
 
 <div class="form">
-    <form class="form" action="/" method="POST">
+    <!-- class="form" action="/" method="POST" id="formulario"-->
+    
+    <form class="form" action="/" method="POST" id="formulario">
         <h2>Contacto</h2>
         <p type="Nombre:">
-            <input name="nombre" placeholder="indique su nombre completo..." value="<%= tarea.nombre%>">
+            <input name="nombre" id="nombre" placeholder="indique su nombre completo..." value="<%= tarea.nombre%>">
            
 
         <p type="Email:">
-            <input name="email" placeholder="indique su Email..." value="<%= tarea.email%>">
+            <input name="email" id="email" placeholder="indique su Email..." value="<%= tarea.email%>">
         </p>
 
         <p type="Comentario:">
-            <input name="comentario" placeholder="Dejenos su comentario..." value="<%= tarea.comentario%>">
+            <input name="comentario" id="comentario" placeholder="Dejenos su comentario..." value="<%= tarea.comentario%>">
         </p>
+        <captcha
+        class="g-recaptcha"
+        data-sitekey= <%= process.env.SITE_KEY %>
+      ></captcha>
             <button type="submit">Enviar mensaje</button>
             <input type="hidden" name="ip" value="<%= tarea.ip%>"/>
             <input type="hidden" name="fecha" value="<%= tarea.fecha%>">
@@ -76,5 +92,26 @@
                 <span class="fa fa-envelope-o"></span> alejrpl413x@gmail.com
     <form>
 </div>
+<script>
+    document.getElementById("formulario").addEventListener("submit",function(evt)
+  {
+  
+  var response = grecaptcha.getResponse();
+  var nombre = document.getElementById('nombre')
+    var correo = document.getElementById('email')
+    var comentario = document.getElementById('comentario')
+  if(response.length == 0 || nombre.value=="" || email.value=="" || comentario.value=="") 
+  { 
+    //reCaptcha not verified
+    alert("POR FAVOR RELLENA TODOS LOS CAMPOS Y VERIFICA QUE ERES UN HUMANO!"); 
+    evt.preventDefault();
+    return false;
+  } else {
+  //captcha verified
+  alert("SUS DATOS SE HAN ENVIADO CON EXITO"); 
+  //do the rest of your validations here
+  }
+});
+</script>
 </body>
 </html>
