@@ -136,8 +136,8 @@ display: inline;
 
 
 .form{
-    width: 400px;
-    height: 520px;
+    width: 430px;
+    height: 550px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 40px -10px #000;
@@ -150,8 +150,8 @@ display: inline;
 }
 
 .form-login{
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 40px -10px #000;
